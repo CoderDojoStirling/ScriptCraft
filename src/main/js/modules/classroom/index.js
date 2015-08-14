@@ -176,6 +176,8 @@ var _classroom = {
             }
         });
 
+        blackboard.allowScripting(canScript);
+
         store.enableScripting = canScript;
 
         echo(sender, 'Scripting turned ' + ( canScript ? 'on' : 'off' ) +
