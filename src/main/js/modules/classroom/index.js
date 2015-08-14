@@ -1,6 +1,7 @@
 'use strict';
 /*global require, module, __plugin, __dirname, echo, persist, isOp, events, Packages, command, global */
-var utils = require('utils'),
+var blackboard = require('blackboard'),
+    utils = require('utils'),
     foreach = utils.foreach,
     livereload = require('livereload'),
     playersDir = __dirname + '/../../players/',
@@ -195,4 +196,10 @@ if (__plugin.canary) {
         }
     }, 'HIGHEST');
 }
+
+if (store.enableScripting) {
+    //Enable blackboard on startup
+    blackboard.allowScripting(true);
+}
+
 module.exports = _classroom;
